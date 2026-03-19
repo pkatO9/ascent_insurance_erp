@@ -134,7 +134,11 @@ doctype_js = {"Lead" : "ascent_insurance_erp/public/js/lead.js"}
 # 	"ToDo": "custom_app.overrides.CustomToDo"
 # }
 
-fixtures = ["Custom Field", "Property Setter"]
+fixtures = [
+    {"dt": "Custom Field", "filters": [["dt", "in", ["Lead"]]]},
+    {"dt": "Property Setter", "filters": [["doc_type", "in", ["Lead"]]]},
+    {"dt": "Kanban Board", "filters": [["kanban_board_name", "in", ["Lead Pipeline"]]]}
+]
 
 doc_events = {
 	"Lead": {

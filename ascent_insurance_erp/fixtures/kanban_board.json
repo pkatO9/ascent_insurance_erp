@@ -1,0 +1,30 @@
+[
+ {
+  "doctype": "Kanban Board",
+  "kanban_board_name": "Lead Pipeline",
+  "reference_doctype": "Lead",
+  "field_name": "status",
+  "columns": [
+   {
+    "column_name": "New"
+   },
+   {
+    "column_name": "Contacted"
+   },
+   {
+    "column_name": "Quotation Sent"
+   },
+   {
+    "column_name": "Policy Proposal"
+   },
+   {
+    "column_name": "Converted"
+   },
+   {
+    "column_name": "Lost"
+   }
+  ],
+  "name": "Lead Pipeline"
+ }
+]
+

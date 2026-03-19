@@ -88,21 +88,28 @@ def validate_status_transition(doc):
             doc.status = "New"
         return
 
-    old_status = frappe.db.get_value("Lead", doc.name, "status")
+    if not doc.has_value_changed("status"):
+        return
+
+    # Use _doc_before_save if available, fallback to DB
+    old_status = getattr(doc, "_doc_before_save", None)
+    if old_status:
+        old_status = old_status.status
+    else:
+        old_status = frappe.db.get_value("Lead", doc.name, "status")
     
     if not old_status or old_status == doc.status:
         return
 
-    transitions = {
-        "New": ["Contacted"],
-        "Contacted": ["Quotation Sent"],
-        "Quotation Sent": ["Policy Proposal"],
-        "Policy Proposal": ["Converted", "Lost"],
-        "Converted": [],
-        "Lost": []
+    # Valid transitions mapping
+    valid_transitions = {
+        "New": ["Contacted", "Lost"],
+        "Contacted": ["Quotation Sent", "Lost"],
+        "Quotation Sent": ["Policy Proposal", "Lost"],
+        "Policy Proposal": ["Converted", "Lost"]
     }
 
-    allowed_next = transitions.get(old_status, [])
+    allowed_next = valid_transitions.get(old_status, [])
     
     if doc.status not in allowed_next:
         frappe.throw(
@@ -112,6 +119,7 @@ def validate_status_transition(doc):
                 ", ".join([frappe.bold(s) for s in allowed_next]) if allowed_next else _("None")
             )
         )
+
 
 def validate_insurance_fields(doc):
     if not doc.is_new():
