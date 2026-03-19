@@ -1,30 +1,71 @@
 [
  {
-  "doctype": "Kanban Board",
-  "kanban_board_name": "Lead Pipeline",
-  "reference_doctype": "Lead",
-  "field_name": "status",
   "columns": [
    {
-    "column_name": "New"
+    "column_name": "New",
+    "indicator": null,
+    "order": "[\n \"CRM-LEAD-2026-00003\",\n \"CRM-LEAD-2026-00002\"\n]",
+    "parent": "Lead Pipeline",
+    "parentfield": "columns",
+    "parenttype": "Kanban Board",
+    "status": null
    },
    {
-    "column_name": "Contacted"
+    "column_name": "Contacted",
+    "indicator": null,
+    "order": "[]",
+    "parent": "Lead Pipeline",
+    "parentfield": "columns",
+    "parenttype": "Kanban Board",
+    "status": null
    },
    {
-    "column_name": "Quotation Sent"
+    "column_name": "Quotation Sent",
+    "indicator": null,
+    "order": "[]",
+    "parent": "Lead Pipeline",
+    "parentfield": "columns",
+    "parenttype": "Kanban Board",
+    "status": null
    },
    {
-    "column_name": "Policy Proposal"
+    "column_name": "Policy Proposal",
+    "indicator": null,
+    "order": "[]",
+    "parent": "Lead Pipeline",
+    "parentfield": "columns",
+    "parenttype": "Kanban Board",
+    "status": null
    },
    {
-    "column_name": "Converted"
+    "column_name": "Converted",
+    "indicator": null,
+    "order": "[\n \"CRM-LEAD-2026-00001\"\n]",
+    "parent": "Lead Pipeline",
+    "parentfield": "columns",
+    "parenttype": "Kanban Board",
+    "status": null
    },
    {
-    "column_name": "Lost"
+    "column_name": "Lost",
+    "indicator": null,
+    "order": "[]",
+    "parent": "Lead Pipeline",
+    "parentfield": "columns",
+    "parenttype": "Kanban Board",
+    "status": null
    }
   ],
-  "name": "Lead Pipeline"
+  "docstatus": 0,
+  "doctype": "Kanban Board",
+  "field_name": "status",
+  "fields": null,
+  "filters": null,
+  "kanban_board_name": "Lead Pipeline",
+  "modified": "2026-03-19 17:15:45.944675",
+  "name": "Lead Pipeline",
+  "private": 0,
+  "reference_doctype": "Lead",
+  "show_labels": 0
  }
 ]
-
