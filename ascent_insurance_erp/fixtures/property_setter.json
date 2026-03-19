@@ -47,9 +47,6 @@
   "property_type": "Check",
   "value": "1"
  },
-
-
-
  {
   "doctype": "Property Setter",
   "doctype_or_field": "DocField",
@@ -89,5 +86,122 @@
   "property": "default",
   "property_type": "Text",
   "value": "Warm"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocType",
+  "doc_type": "Lead",
+  "name": "Lead-main-sort_field",
+  "property": "sort_field",
+  "property_type": "Data",
+  "value": "creation"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocType",
+  "doc_type": "Lead",
+  "name": "Lead-main-sort_order",
+  "property": "sort_order",
+  "property_type": "Data",
+  "value": "DESC"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocType",
+  "doc_type": "Lead",
+  "name": "Lead-main-title_field",
+  "property": "title_field",
+  "property_type": "Data",
+  "value": "lead_name"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "lead_name",
+  "name": "Lead-lead_name-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "mobile_no",
+  "name": "Lead-mobile_no-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "policy_type_of_interest",
+  "name": "Lead-policy_type_of_interest-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "status",
+  "name": "Lead-status-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "lead_owner",
+  "name": "Lead-lead_owner-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "territory",
+  "name": "Lead-territory-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "0"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "company_name",
+  "name": "Lead-company_name-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "0"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "job_title",
+  "name": "Lead-job_title-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "0"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "title",
+  "name": "Lead-title-in_list_view",
+  "property": "in_list_view",
+  "property_type": "Check",
+  "value": "0"
  }
 ]
