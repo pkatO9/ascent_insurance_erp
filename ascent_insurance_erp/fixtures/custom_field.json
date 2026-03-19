@@ -1,0 +1,143 @@
+[
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "ascent_insurance_details_sb",
+  "fieldtype": "Section Break",
+  "insert_after": "company_name",
+  "label": "Insurance Details",
+  "name": "Lead-ascent_insurance_details_sb"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "policy_type_of_interest",
+  "fieldtype": "Link",
+  "insert_after": "ascent_insurance_details_sb",
+  "label": "Policy Type of Interest",
+  "name": "Lead-policy_type_of_interest",
+  "options": "Policy Type"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "sum_insured_required",
+  "fieldtype": "Currency",
+  "insert_after": "policy_type_of_interest",
+  "label": "Sum Insured Required",
+  "name": "Lead-sum_insured_required"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "preferred_insurer",
+  "fieldtype": "Link",
+  "insert_after": "sum_insured_required",
+  "label": "Preferred Insurer",
+  "name": "Lead-preferred_insurer",
+  "options": "Insurer"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "ascent_personal_details_sb",
+  "fieldtype": "Section Break",
+  "insert_after": "preferred_insurer",
+  "label": "Personal Details",
+  "name": "Lead-ascent_personal_details_sb"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "age",
+  "fieldtype": "Int",
+  "insert_after": "ascent_personal_details_sb",
+  "label": "Age",
+  "name": "Lead-age"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "occupation",
+  "fieldtype": "Data",
+  "insert_after": "age",
+  "label": "Occupation",
+  "name": "Lead-occupation"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "annual_income",
+  "fieldtype": "Currency",
+  "insert_after": "occupation",
+  "label": "Annual Income",
+  "name": "Lead-annual_income"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "family_size",
+  "fieldtype": "Int",
+  "insert_after": "annual_income",
+  "label": "Family Size",
+  "name": "Lead-family_size"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "ascent_qualification_sb",
+  "fieldtype": "Section Break",
+  "insert_after": "family_size",
+  "label": "Qualification",
+  "name": "Lead-ascent_qualification_sb"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "lead_priority",
+  "fieldtype": "Select",
+  "insert_after": "ascent_qualification_sb",
+  "label": "Lead Priority",
+  "name": "Lead-lead_priority",
+  "options": "Hot\nWarm\nCold"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "budget_range",
+  "fieldtype": "Select",
+  "insert_after": "lead_priority",
+  "label": "Budget Range",
+  "name": "Lead-budget_range",
+  "options": "Low\nMedium\nHigh"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "ascent_tracking_sb",
+  "fieldtype": "Section Break",
+  "insert_after": "budget_range",
+  "label": "Tracking",
+  "name": "Lead-ascent_tracking_sb"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "ascent_lead_source",
+  "fieldtype": "Select",
+  "insert_after": "ascent_tracking_sb",
+  "label": "Lead Source",
+  "name": "Lead-ascent_lead_source",
+  "options": "Walk-in\nReferral\nWhatsApp\nWebsite\nOther",
+  "reqd": 1
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "ascent_notes",
+  "fieldtype": "Small Text",
+  "insert_after": "ascent_lead_source",
+  "label": "Notes",
+  "name": "Lead-ascent_notes"
+ }
+]

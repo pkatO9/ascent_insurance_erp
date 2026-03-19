@@ -1,0 +1,12 @@
+[
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "status",
+  "name": "Lead-status-options",
+  "property": "options",
+  "property_type": "Text",
+  "value": "New\nContacted\nQuotation Sent\nPolicy Proposal\nConverted\nLost"
+ }
+]
