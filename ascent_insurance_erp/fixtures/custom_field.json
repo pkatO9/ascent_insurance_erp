@@ -138,5 +138,16 @@
   "insert_after": "ascent_lead_source",
   "label": "Notes",
   "name": "Lead-ascent_notes"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
+  "fieldname": "ascent_assignment_history",
+  "fieldtype": "Table",
+  "insert_after": "ascent_notes",
+  "label": "Assignment History",
+  "name": "Lead-ascent_assignment_history",
+  "options": "Lead Assignment History"
  }
 ]
+
