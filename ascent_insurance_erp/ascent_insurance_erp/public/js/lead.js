@@ -6,11 +6,21 @@ frappe.ui.form.on('Lead', {
         } else {
             frm.set_df_property('policy_type_of_interest', 'reqd', 0);
         }
-        
-        // Ensure status field is read-only for non-System Managers to enforce pipeline
-        // (Optional, user didn't ask but it's good practice for pipelines)
-        // if (frappe.session.user !== 'Administrator' && !frappe.user_roles.includes('System Manager')) {
-        //    frm.set_df_property('status', 'read_only', 1);
-        // }
+    },
+    
+    policy_type_of_interest: function(frm) {
+        if (frm.doc.policy_type_of_interest) {
+            frappe.show_alert({
+                message: __("Selected Policy Type: {0}", [frm.doc.policy_type_of_interest]),
+                indicator: 'green'
+            });
+        }
+    },
+    
+    mobile_no: function(frm) {
+        // Optional formatting for mobile number (basic check)
+        if (frm.doc.mobile_no && !/^[0-9+]{10,15}$/.test(frm.doc.mobile_no)) {
+            frappe.msgprint(__("Please enter a valid mobile number (10-15 digits)"));
+        }
     }
 });

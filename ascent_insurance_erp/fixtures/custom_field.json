@@ -2,18 +2,9 @@
  {
   "doctype": "Custom Field",
   "dt": "Lead",
-  "fieldname": "ascent_insurance_details_sb",
-  "fieldtype": "Section Break",
-  "insert_after": "company_name",
-  "label": "Insurance Details",
-  "name": "Lead-ascent_insurance_details_sb"
- },
- {
-  "doctype": "Custom Field",
-  "dt": "Lead",
   "fieldname": "policy_type_of_interest",
   "fieldtype": "Link",
-  "insert_after": "ascent_insurance_details_sb",
+  "insert_after": "email_id",
   "label": "Policy Type of Interest",
   "name": "Lead-policy_type_of_interest",
   "options": "Policy Type"
@@ -21,9 +12,18 @@
  {
   "doctype": "Custom Field",
   "dt": "Lead",
+  "fieldname": "ascent_insurance_details_sb",
+  "fieldtype": "Section Break",
+  "insert_after": "status",
+  "label": "Insurance Details",
+  "name": "Lead-ascent_insurance_details_sb"
+ },
+ {
+  "doctype": "Custom Field",
+  "dt": "Lead",
   "fieldname": "sum_insured_required",
   "fieldtype": "Currency",
-  "insert_after": "policy_type_of_interest",
+  "insert_after": "ascent_insurance_details_sb",
   "label": "Sum Insured Required",
   "name": "Lead-sum_insured_required"
  },
@@ -128,8 +128,7 @@
   "insert_after": "ascent_tracking_sb",
   "label": "Lead Source",
   "name": "Lead-ascent_lead_source",
-  "options": "Walk-in\nReferral\nWhatsApp\nWebsite\nOther",
-  "reqd": 1
+  "options": "Walk-in\nReferral\nWhatsApp\nWebsite\nOther"
  },
  {
   "doctype": "Custom Field",

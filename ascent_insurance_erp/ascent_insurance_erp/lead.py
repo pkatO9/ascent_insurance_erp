@@ -8,26 +8,31 @@ def validate(doc, method):
     validate_status_transition(doc)
     validate_insurance_fields(doc)
 
+def before_insert(doc, method):
+    """
+    Auto-assign lead_owner to the current logged-in user if not set
+    """
+    if not doc.get("lead_owner"):
+        doc.lead_owner = frappe.session.user
+
 def validate_status_transition(doc):
     if doc.is_new():
         if doc.status != "New":
-            doc.status = "New" # Force New for new records
+            doc.status = "New"
         return
 
-    # Get the value from DB to compare
     old_status = frappe.db.get_value("Lead", doc.name, "status")
     
     if not old_status or old_status == doc.status:
         return
 
-    # Define logical transitions: New → Contacted → Quotation Sent → Policy Proposal → Converted/Lost
     transitions = {
         "New": ["Contacted"],
         "Contacted": ["Quotation Sent"],
         "Quotation Sent": ["Policy Proposal"],
         "Policy Proposal": ["Converted", "Lost"],
-        "Converted": [], # Terminal state
-        "Lost": [] # Terminal state
+        "Converted": [],
+        "Lost": []
     }
 
     allowed_next = transitions.get(old_status, [])
@@ -37,7 +42,7 @@ def validate_status_transition(doc):
             _("Invalid Status Transition: {0} cannot move to {1}. Expected next stage: {2}").format(
                 frappe.bold(old_status), 
                 frappe.bold(doc.status), 
-                ", ".join([frappe.bold(s) for s in allowed_next]) if allowed_next else _("None (Terminal State)")
+                ", ".join([frappe.bold(s) for s in allowed_next]) if allowed_next else _("None")
             )
         )
 

@@ -138,9 +138,11 @@ fixtures = ["Custom Field", "Property Setter"]
 
 doc_events = {
 	"Lead": {
-		"validate": "ascent_insurance_erp.ascent_insurance_erp.lead.validate"
+		"validate": "ascent_insurance_erp.ascent_insurance_erp.lead.validate",
+		"before_insert": "ascent_insurance_erp.ascent_insurance_erp.lead.before_insert"
 	}
 }
+
 
 
 # Scheduled Tasks

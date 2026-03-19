@@ -1,6 +1,57 @@
 [
  {
   "doctype": "Property Setter",
+  "doctype_or_field": "DocType",
+  "doc_type": "Lead",
+  "name": "Lead-main-quick_entry",
+  "property": "quick_entry",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocType",
+  "doc_type": "Lead",
+  "name": "Lead-main-quick_entry_fields",
+  "property": "quick_entry_fields",
+  "property_type": "Data",
+  "value": "first_name,mobile_no,policy_type_of_interest,status"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "first_name",
+  "name": "Lead-first_name-allow_in_quick_entry",
+  "property": "allow_in_quick_entry",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "mobile_no",
+  "name": "Lead-mobile_no-allow_in_quick_entry",
+  "property": "allow_in_quick_entry",
+  "property_type": "Check",
+  "value": "1"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "policy_type_of_interest",
+  "name": "Lead-policy_type_of_interest-allow_in_quick_entry",
+  "property": "allow_in_quick_entry",
+  "property_type": "Check",
+  "value": "1"
+ },
+
+
+
+ {
+  "doctype": "Property Setter",
   "doctype_or_field": "DocField",
   "doc_type": "Lead",
   "field_name": "status",
@@ -8,5 +59,35 @@
   "property": "options",
   "property_type": "Text",
   "value": "New\nContacted\nQuotation Sent\nPolicy Proposal\nConverted\nLost"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "status",
+  "name": "Lead-status-default",
+  "property": "default",
+  "property_type": "Text",
+  "value": "New"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "ascent_lead_source",
+  "name": "Lead-ascent_lead_source-default",
+  "property": "default",
+  "property_type": "Text",
+  "value": "WhatsApp"
+ },
+ {
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "doc_type": "Lead",
+  "field_name": "lead_priority",
+  "name": "Lead-lead_priority-default",
+  "property": "default",
+  "property_type": "Text",
+  "value": "Warm"
  }
 ]
