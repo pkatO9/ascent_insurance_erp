@@ -12,12 +12,14 @@
   "mode",
   "lead",
   "insurance_quotation",
+  "customer",
   "agent",
   "col_break_1",
   "insurer",
   "policy_type",
   "product_type",
   "sum_insured",
+  "premium",
   "submission_details_sec",
   "submission_date",
   "expected_approval_date",
@@ -69,6 +71,12 @@
    "reqd": 1
   },
   {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
    "default": "frappe.session.user",
    "fieldname": "agent",
    "fieldtype": "Link",
@@ -107,6 +115,11 @@
    "fieldtype": "Currency",
    "label": "Sum Insured",
    "reqd": 1
+  },
+  {
+   "fieldname": "premium",
+   "fieldtype": "Currency",
+   "label": "Premium"
   },
   {
    "fieldname": "submission_details_sec",
@@ -180,7 +193,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-20 20:14:12.282398",
+ "modified": "2026-03-21 02:05:00.000000",
  "modified_by": "Administrator",
  "module": "Ascent Insurance Erp",
  "name": "Policy Proposal",

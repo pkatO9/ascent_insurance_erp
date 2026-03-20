@@ -1,59 +1,85 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "naming_series:",
  "creation": "2026-03-20 23:00:00.000000",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "policy_details_sec",
+  "reference_sec",
+  "naming_series",
+  "policy_number",
   "proposal",
+  "insurance_quotation",
   "lead",
+  "customer_agent_sec",
   "customer",
   "agent",
-  "insurance_quotation",
-  "column_break_1",
+  "col_break_1",
   "insurer",
   "policy_type",
   "product_type",
+  "policy_details_sec",
   "sum_insured",
-  "start_date",
-  "net_premium",
-  "gst_percent",
+  "gross_premium",
+  "premium_frequency",
   "gst_amount",
-  "net_gst_amount",
-  "entry_details_sec",
-  "mode",
-  "proposer_date",
-  "risk_date",
-  "nominee",
-  "ncb",
-  "discount",
-  "basic_od",
-  "column_break_2",
-  "payment_mode",
-  "payment_date",
-  "chq_no",
-  "chq_amount",
-  "bank_details_sec",
-  "ifsc",
-  "branch_name",
-  "account_no",
-  "bank_name",
-  "section_break_status",
+  "net_premium",
+  "col_break_2",
+  "start_date",
+  "end_date",
+  "policy_term",
+  "renewal_date",
+  "commission_sec",
+  "commission_rate",
+  "commission_amount",
+  "commission_status",
+  "status_sec",
   "status",
-  "members"
+  "renewal_reminder_sent",
+  "cancellation_reason",
+  "insured_members_sec",
+  "members",
+  "docs_notes_sec",
+  "policy_document",
+  "additional_documents",
+  "notes",
+  "amended_from"
  ],
  "fields": [
   {
-   "fieldname": "policy_details_sec",
+   "fieldname": "reference_sec",
    "fieldtype": "Section Break",
-   "label": "Policy Details"
+   "label": "Reference"
+  },
+  {
+   "default": "POL-.YYYY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "POL-.YYYY.-"
+  },
+  {
+   "description": "Enter exactly as shown on the policy document",
+   "fieldname": "policy_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Policy Number (Insurer)",
+   "mandatory": 1,
+   "unique": 1
   },
   {
    "fieldname": "proposal",
    "fieldtype": "Link",
-   "label": "Proposal",
+   "label": "Policy Proposal",
    "options": "Policy Proposal",
+   "read_only": 1
+  },
+  {
+   "fieldname": "insurance_quotation",
+   "fieldtype": "Link",
+   "label": "Insurance Quotation",
+   "options": "Insurance Quotation",
    "read_only": 1
   },
   {
@@ -63,212 +89,277 @@
    "options": "Lead"
   },
   {
+   "fieldname": "customer_agent_sec",
+   "fieldtype": "Section Break",
+   "label": "Customer & Agent"
+  },
+  {
    "fieldname": "customer",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Customer",
+   "mandatory": 1,
    "options": "Customer"
   },
   {
    "fieldname": "agent",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Agent",
+   "mandatory": 1,
    "options": "User"
   },
   {
-   "fieldname": "insurance_quotation",
-   "fieldtype": "Link",
-   "label": "Insurance Quotation",
-   "options": "Insurance Quotation"
-  },
-  {
-   "fieldname": "column_break_1",
+   "fieldname": "col_break_1",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "insurer",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Insurer",
+   "mandatory": 1,
    "options": "Insurer"
   },
   {
    "fieldname": "policy_type",
    "fieldtype": "Link",
    "label": "Policy Type",
+   "mandatory": 1,
    "options": "Policy Type"
   },
   {
    "fieldname": "product_type",
    "fieldtype": "Link",
    "label": "Product Type",
+   "mandatory": 1,
    "options": "Product Type"
+  },
+  {
+   "fieldname": "policy_details_sec",
+   "fieldtype": "Section Break",
+   "label": "Policy Details"
   },
   {
    "fieldname": "sum_insured",
    "fieldtype": "Currency",
-   "label": "Sum Insured"
+   "label": "Sum Insured",
+   "mandatory": 1
   },
   {
-   "fieldname": "start_date",
-   "fieldtype": "Date",
-   "label": "Start Date"
-  },
-  {
-   "fieldname": "net_premium",
+   "fieldname": "gross_premium",
    "fieldtype": "Currency",
-   "label": "Net Premium"
+   "in_list_view": 1,
+   "label": "Gross Premium (Annual)",
+   "mandatory": 1
   },
   {
-   "default": "18",
-   "fieldname": "gst_percent",
-   "fieldtype": "Float",
-   "label": "GST %"
+   "default": "Annual",
+   "fieldname": "premium_frequency",
+   "fieldtype": "Select",
+   "label": "Premium Frequency",
+   "mandatory": 1,
+   "options": "Annual\nHalf-Yearly\nQuarterly\nMonthly"
   },
   {
+   "description": "Auto-calculated",
    "fieldname": "gst_amount",
    "fieldtype": "Currency",
    "label": "GST Amount",
    "read_only": 1
   },
   {
-   "fieldname": "net_gst_amount",
+   "fieldname": "net_premium",
    "fieldtype": "Currency",
-   "label": "Net GST Amount",
+   "label": "Net Premium (excl. GST)",
    "read_only": 1
   },
   {
-   "fieldname": "entry_details_sec",
-   "fieldtype": "Section Break",
-   "label": "Policy Entry Details"
-  },
-  {
-   "fieldname": "mode",
-   "fieldtype": "Select",
-   "label": "Mode",
-   "options": "Fresh\nRenewal\nPortability",
-   "default": "Fresh",
-   "reqd": 1
-  },
-  {
-   "fieldname": "proposer_date",
-   "fieldtype": "Date",
-   "label": "Proposer Date",
-   "reqd": 1
-  },
-  {
-   "fieldname": "risk_date",
-   "fieldtype": "Date",
-   "label": "Risk Date",
-   "reqd": 1
-  },
-  {
-   "fieldname": "nominee",
-   "fieldtype": "Data",
-   "label": "Nominee Name"
-  },
-  {
-   "default": "0",
-   "description": "Applicable for motor policies",
-   "fieldname": "ncb",
-   "fieldtype": "Currency",
-   "label": "NCB (No Claim Bonus)"
-  },
-  {
-   "default": "0",
-   "fieldname": "discount",
-   "fieldtype": "Currency",
-   "label": "Discount"
-  },
-  {
-   "default": "0",
-   "description": "Own Damage component \u2014 applicable for motor policies",
-   "fieldname": "basic_od",
-   "fieldtype": "Currency",
-   "label": "Basic / OD Premium"
-  },
-  {
-   "fieldname": "column_break_2",
+   "fieldname": "col_break_2",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "payment_mode",
-   "fieldtype": "Select",
-   "label": "Payment Mode",
-   "options": "Cash\nCheque\nNEFT\nUPI\nOnline",
-   "reqd": 1
-  },
-  {
-   "fieldname": "payment_date",
+   "fieldname": "start_date",
    "fieldtype": "Date",
-   "label": "Payment Date"
+   "label": "Policy Start Date",
+   "mandatory": 1
   },
   {
-   "depends_on": "eval:doc.payment_mode=='Cheque'",
-   "fieldname": "chq_no",
-   "fieldtype": "Data",
-   "label": "Cheque No."
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "Policy End Date",
+   "mandatory": 1
   },
   {
-   "depends_on": "eval:doc.payment_mode=='Cheque'",
-   "fieldname": "chq_amount",
-   "fieldtype": "Currency",
-   "label": "Cheque Amount"
+   "description": "Auto-calculated from dates",
+   "fieldname": "policy_term",
+   "fieldtype": "Int",
+   "label": "Policy Term (Years)",
+   "read_only": 1
   },
   {
-   "fieldname": "bank_details_sec",
+   "description": "Auto-set to 30 days before end_date",
+   "fieldname": "renewal_date",
+   "fieldtype": "Date",
+   "label": "Renewal Due Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "commission_sec",
    "fieldtype": "Section Break",
-   "label": "Bank Details"
+   "label": "Commission"
   },
   {
-   "depends_on": "eval:doc.payment_mode=='NEFT'",
-   "fieldname": "ifsc",
-   "fieldtype": "Data",
-   "label": "IFSC Code"
+   "description": "Fetch from active Commission Structure and lock at issuance",
+   "fieldname": "commission_rate",
+   "fieldtype": "Percent",
+   "label": "Commission Rate (%)",
+   "mandatory": 1
   },
   {
-   "depends_on": "eval:doc.payment_mode=='NEFT'",
-   "fieldname": "branch_name",
-   "fieldtype": "Data",
-   "label": "Branch Name"
+   "description": "Auto-calculated: gross_premium \u00d7 commission_rate / 100",
+   "fieldname": "commission_amount",
+   "fieldtype": "Currency",
+   "label": "Commission Amount",
+   "read_only": 1
   },
   {
-   "depends_on": "eval:doc.payment_mode=='NEFT'",
-   "fieldname": "account_no",
-   "fieldtype": "Data",
-   "label": "Account No."
+   "default": "Pending",
+   "fieldname": "commission_status",
+   "fieldtype": "Select",
+   "label": "Commission Status",
+   "options": "Pending\nInvoiced\nSettled",
+   "read_only": 1
   },
   {
-   "depends_on": "eval:doc.payment_mode=='NEFT'",
-   "fieldname": "bank_name",
-   "fieldtype": "Data",
-   "label": "Bank Name"
+   "fieldname": "status_sec",
+   "fieldtype": "Section Break",
+   "label": "Status"
   },
   {
-   "fieldname": "section_break_status",
-   "fieldtype": "Section Break"
-  },
-  {
+   "default": "Draft",
    "fieldname": "status",
    "fieldtype": "Select",
-   "label": "Status",
-   "options": "Draft\nActive\nCancelled\nExpired",
-   "default": "Draft"
+   "in_list_view": 1,
+   "label": "Policy Status",
+   "options": "Draft\nActive\nUp for Renewal\nLapsed\nCancelled\nExpired\nRenewed"
+  },
+  {
+   "default": "0",
+   "fieldname": "renewal_reminder_sent",
+   "fieldtype": "Check",
+   "label": "Renewal Reminder Sent",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.status=='Cancelled'",
+   "fieldname": "cancellation_reason",
+   "fieldtype": "Small Text",
+   "label": "Cancellation Reason"
+  },
+  {
+   "fieldname": "insured_members_sec",
+   "fieldtype": "Section Break",
+   "label": "Insured Members"
   },
   {
    "fieldname": "members",
    "fieldtype": "Table",
-   "label": "Members",
-   "options": "Quotation Member"
+   "label": "Insured Members",
+   "options": "Policy Member Detail"
+  },
+  {
+   "fieldname": "docs_notes_sec",
+   "fieldtype": "Section Break",
+   "label": "Documents & Notes"
+  },
+  {
+   "description": "Upload the policy document received from insurer",
+   "fieldname": "policy_document",
+   "fieldtype": "Attach",
+   "label": "Policy Document (PDF)"
+  },
+  {
+   "fieldname": "additional_documents",
+   "fieldtype": "Table",
+   "label": "Additional Documents",
+   "options": "Policy Document Attachment"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Internal Notes"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Policy",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2026-03-20 23:30:00.000000",
+ "modified": "2026-03-21 03:20:00.000000",
  "modified_by": "Administrator",
  "module": "ascent_insurance_erp",
  "name": "Policy",
  "owner": "Administrator",
  "permissions": [
   {
+   "email": 1,
+   "export": 1,
+   "if_owner": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Agent",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Operations Executive",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Accounts Executive",
+   "share": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,
@@ -278,6 +369,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

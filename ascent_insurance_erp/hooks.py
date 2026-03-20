@@ -43,7 +43,11 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Lead" : "ascent_insurance_erp/public/js/lead.js"}
+doctype_js = {
+	"Lead" : "ascent_insurance_erp/public/js/lead.js",
+	"Policy Proposal": "ascent_insurance_erp/public/js/policy_proposal.js",
+	"Policy": "ascent_insurance_erp/public/js/policy.js"
+}
 
 doctype_list_js = {"Lead": "public/js/lead_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}

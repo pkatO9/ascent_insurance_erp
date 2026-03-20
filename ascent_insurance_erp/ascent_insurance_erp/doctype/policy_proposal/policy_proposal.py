@@ -45,14 +45,20 @@ class PolicyProposal(Document):
 			frappe.msgprint(_("Policy {0} is already created for this proposal.").format(self.policy))
 			return
 			
+		# Auto-create customer if not exists
+		customer_name = get_or_create_customer(self.lead)
+		self.customer = customer_name
+		self.db_set("customer", customer_name)
+
 		new_policy = frappe.new_doc("Policy")
 		new_policy.proposal = self.name
 		new_policy.lead = self.lead
-		new_policy.customer = self.customer
+		new_policy.customer = customer_name
 		new_policy.insurer = self.insurer
 		new_policy.policy_type = self.policy_type
 		new_policy.product_type = self.product_type
 		new_policy.sum_insured = self.sum_insured
+		new_policy.gross_premium = self.premium
 		new_policy.agent = self.agent
 		new_policy.insurance_quotation = self.insurance_quotation
 		new_policy.status = "Draft"

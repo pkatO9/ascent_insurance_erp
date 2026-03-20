@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-21 03:15:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "relation",
+  "member_name",
+  "dob",
+  "age",
+  "gender",
+  "ped",
+  "member_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "relation",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Relation",
+   "options": "Self\nSpouse\nSon\nDaughter\nFather\nMother\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Member Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "Date of Birth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Age",
+   "read_only": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale\nOther"
+  },
+  {
+   "default": "None",
+   "fieldname": "ped",
+   "fieldtype": "Small Text",
+   "label": "Pre-Existing Diseases"
+  },
+  {
+   "description": "As on policy document",
+   "fieldname": "member_id",
+   "fieldtype": "Data",
+   "label": "Member ID / Health Card No."
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "modified": "2026-03-21 03:15:00.000000",
+ "modified_by": "Administrator",
+ "module": "ascent_insurance_erp",
+ "name": "Policy Member Detail",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
