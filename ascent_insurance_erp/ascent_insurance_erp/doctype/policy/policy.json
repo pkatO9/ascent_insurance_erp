@@ -1,26 +1,270 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2026-03-20 20:14:11.880420",
+ "creation": "2026-03-20 23:00:00.000000",
  "doctype": "DocType",
- "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "title"
+  "policy_details_sec",
+  "proposal",
+  "lead",
+  "customer",
+  "agent",
+  "insurance_quotation",
+  "column_break_1",
+  "insurer",
+  "policy_type",
+  "product_type",
+  "sum_insured",
+  "start_date",
+  "net_premium",
+  "gst_percent",
+  "gst_amount",
+  "net_gst_amount",
+  "entry_details_sec",
+  "mode",
+  "proposer_date",
+  "risk_date",
+  "nominee",
+  "ncb",
+  "discount",
+  "basic_od",
+  "column_break_2",
+  "payment_mode",
+  "payment_date",
+  "chq_no",
+  "chq_amount",
+  "bank_details_sec",
+  "ifsc",
+  "branch_name",
+  "account_no",
+  "bank_name",
+  "section_break_status",
+  "status",
+  "members"
  ],
  "fields": [
   {
-   "fieldname": "title",
+   "fieldname": "policy_details_sec",
+   "fieldtype": "Section Break",
+   "label": "Policy Details"
+  },
+  {
+   "fieldname": "proposal",
+   "fieldtype": "Link",
+   "label": "Proposal",
+   "options": "Policy Proposal",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lead",
+   "fieldtype": "Link",
+   "label": "Lead",
+   "options": "Lead"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "agent",
+   "fieldtype": "Link",
+   "label": "Agent",
+   "options": "User"
+  },
+  {
+   "fieldname": "insurance_quotation",
+   "fieldtype": "Link",
+   "label": "Insurance Quotation",
+   "options": "Insurance Quotation"
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "insurer",
+   "fieldtype": "Link",
+   "label": "Insurer",
+   "options": "Insurer"
+  },
+  {
+   "fieldname": "policy_type",
+   "fieldtype": "Link",
+   "label": "Policy Type",
+   "options": "Policy Type"
+  },
+  {
+   "fieldname": "product_type",
+   "fieldtype": "Link",
+   "label": "Product Type",
+   "options": "Product Type"
+  },
+  {
+   "fieldname": "sum_insured",
+   "fieldtype": "Currency",
+   "label": "Sum Insured"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "net_premium",
+   "fieldtype": "Currency",
+   "label": "Net Premium"
+  },
+  {
+   "default": "18",
+   "fieldname": "gst_percent",
+   "fieldtype": "Float",
+   "label": "GST %"
+  },
+  {
+   "fieldname": "gst_amount",
+   "fieldtype": "Currency",
+   "label": "GST Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_gst_amount",
+   "fieldtype": "Currency",
+   "label": "Net GST Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "entry_details_sec",
+   "fieldtype": "Section Break",
+   "label": "Policy Entry Details"
+  },
+  {
+   "fieldname": "mode",
+   "fieldtype": "Select",
+   "label": "Mode",
+   "options": "Fresh\nRenewal\nPortability",
+   "default": "Fresh",
+   "reqd": 1
+  },
+  {
+   "fieldname": "proposer_date",
+   "fieldtype": "Date",
+   "label": "Proposer Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "risk_date",
+   "fieldtype": "Date",
+   "label": "Risk Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nominee",
    "fieldtype": "Data",
-   "label": "Title"
+   "label": "Nominee Name"
+  },
+  {
+   "default": "0",
+   "description": "Applicable for motor policies",
+   "fieldname": "ncb",
+   "fieldtype": "Currency",
+   "label": "NCB (No Claim Bonus)"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount",
+   "fieldtype": "Currency",
+   "label": "Discount"
+  },
+  {
+   "default": "0",
+   "description": "Own Damage component \u2014 applicable for motor policies",
+   "fieldname": "basic_od",
+   "fieldtype": "Currency",
+   "label": "Basic / OD Premium"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_mode",
+   "fieldtype": "Select",
+   "label": "Payment Mode",
+   "options": "Cash\nCheque\nNEFT\nUPI\nOnline",
+   "reqd": 1
+  },
+  {
+   "fieldname": "payment_date",
+   "fieldtype": "Date",
+   "label": "Payment Date"
+  },
+  {
+   "depends_on": "eval:doc.payment_mode=='Cheque'",
+   "fieldname": "chq_no",
+   "fieldtype": "Data",
+   "label": "Cheque No."
+  },
+  {
+   "depends_on": "eval:doc.payment_mode=='Cheque'",
+   "fieldname": "chq_amount",
+   "fieldtype": "Currency",
+   "label": "Cheque Amount"
+  },
+  {
+   "fieldname": "bank_details_sec",
+   "fieldtype": "Section Break",
+   "label": "Bank Details"
+  },
+  {
+   "depends_on": "eval:doc.payment_mode=='NEFT'",
+   "fieldname": "ifsc",
+   "fieldtype": "Data",
+   "label": "IFSC Code"
+  },
+  {
+   "depends_on": "eval:doc.payment_mode=='NEFT'",
+   "fieldname": "branch_name",
+   "fieldtype": "Data",
+   "label": "Branch Name"
+  },
+  {
+   "depends_on": "eval:doc.payment_mode=='NEFT'",
+   "fieldname": "account_no",
+   "fieldtype": "Data",
+   "label": "Account No."
+  },
+  {
+   "depends_on": "eval:doc.payment_mode=='NEFT'",
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name"
+  },
+  {
+   "fieldname": "section_break_status",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nActive\nCancelled\nExpired",
+   "default": "Draft"
+  },
+  {
+   "fieldname": "members",
+   "fieldtype": "Table",
+   "label": "Members",
+   "options": "Quotation Member"
   }
  ],
- "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-20 20:14:11.880420",
+ "modified": "2026-03-20 23:30:00.000000",
  "modified_by": "Administrator",
- "module": "Ascent Insurance Erp",
+ "module": "ascent_insurance_erp",
  "name": "Policy",
  "owner": "Administrator",
  "permissions": [
@@ -37,9 +281,8 @@
    "write": 1
   }
  ],
- "row_format": "Dynamic",
- "rows_threshold_for_grid_search": 20,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "track_changes": 1
 }

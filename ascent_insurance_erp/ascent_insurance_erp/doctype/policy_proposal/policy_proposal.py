@@ -3,8 +3,14 @@ from frappe import _, ValidationError
 from frappe.model.document import Document
 from frappe.utils import today
 
+from ascent_insurance_erp.ascent_insurance_erp.utils.customer_utils import get_or_create_customer
+
 class PolicyProposal(Document):
 	def validate(self):
+		# Fetch customer silently
+		if self.lead:
+			self.customer = get_or_create_customer(self.lead)
+
 		if self.status == "Approved" and not self.approval_date:
 			frappe.throw(_("Please set the Approval Date before marking as Approved."), frappe.ValidationError)
 		

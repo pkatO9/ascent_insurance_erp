@@ -9,9 +9,9 @@
  "field_order": [
   "proposal_details_sec",
   "naming_series",
+  "mode",
   "lead",
   "insurance_quotation",
-  "customer",
   "agent",
   "col_break_1",
   "insurer",
@@ -44,6 +44,16 @@
    "options": "PROP-.YYYY.-"
   },
   {
+   "default": "Fresh",
+   "fieldname": "mode",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "insert_after": "naming_series",
+   "label": "Mode",
+   "mandatory": 1,
+   "options": "Fresh\nRenewal\nPortability"
+  },
+  {
    "fieldname": "lead",
    "fieldtype": "Link",
    "in_list_view": 1,
@@ -56,13 +66,6 @@
    "fieldtype": "Link",
    "label": "Insurance Quotation",
    "options": "Insurance Quotation",
-   "reqd": 1
-  },
-  {
-   "fieldname": "customer",
-   "fieldtype": "Link",
-   "label": "Customer",
-   "options": "Customer",
    "reqd": 1
   },
   {
