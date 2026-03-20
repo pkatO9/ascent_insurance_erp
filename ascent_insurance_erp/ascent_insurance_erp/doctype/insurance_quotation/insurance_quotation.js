@@ -3,6 +3,58 @@ frappe.ui.form.on('Insurance Quotation', {
     refresh: function(frm) {
         if (frm.doc.lead && !frm.is_new()) {
             frm.trigger('update_proposer_options');
+            
+            frm.add_custom_button(__('Email to Customer'), () => {
+                frappe.db.get_value('Lead', frm.doc.lead, 'email_id', (r) => {
+                    let lead_email = r.email_id || "";
+                    
+                    frappe.prompt([
+                        {
+                            label: __('To Email'),
+                            fieldname: 'to_email',
+                            fieldtype: 'Data',
+                            reqd: 1,
+                            default: lead_email
+                        },
+                        {
+                            label: __('Message'),
+                            fieldname: 'message',
+                            fieldtype: 'Small Text',
+                            default: __("Dear {0},\n\nPlease find attached your health insurance premium comparison for Quotation {1}.\n\nBest regards,\n{2}", 
+                                [frm.doc.proposer_name, frm.doc.name, frappe.session.user_fullname])
+                        }
+                    ], (values) => {
+                        frappe.call({
+                            method: 'ascent_insurance_erp.ascent_insurance_erp.doctype.insurance_quotation.insurance_quotation.email_quotation',
+                            args: {
+                                docname: frm.doc.name,
+                                to_email: values.to_email,
+                                message: values.message
+                            },
+                            callback: function(r) {
+                                if (!r.exc) {
+                                    frappe.show_alert({
+                                        message: __('Quotation emailed successfully'),
+                                        indicator: 'green'
+                                    });
+                                    frm.reload_doc();
+                                    
+                                    // Update Lead Status - Handle transitions: New -> Contacted -> Quotation Sent
+                                    frappe.db.get_value('Lead', frm.doc.lead, 'status', (ls) => {
+                                        if (ls.status === 'New') {
+                                            frappe.db.set_value('Lead', frm.doc.lead, 'status', 'Contacted').then(() => {
+                                                frappe.db.set_value('Lead', frm.doc.lead, 'status', 'Quotation Sent');
+                                            });
+                                        } else if (ls.status === 'Contacted') {
+                                            frappe.db.set_value('Lead', frm.doc.lead, 'status', 'Quotation Sent');
+                                        }
+                                    });
+                                }
+                            }
+                        });
+                    }, __('Email Quotation'), __('Send'));
+                });
+            }, __('Actions'));
         }
     },
 
