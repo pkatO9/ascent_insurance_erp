@@ -2,40 +2,27 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:IQ-{YY}-{MM}-{#####}",
- "creation": "2026-03-19 17:55:00.000000",
  "doctype": "DocType",
  "engine": "InnoDB",
- "field_order": [
-  "lead",
-  "proposer_name",
-  "pincode",
-  "column_break_4",
-  "policy_type",
-  "policy_period",
-  "is_port",
-  "quote_date",
-  "section_break_9",
-  "status",
-  "agent",
-  "section_break_12",
-  "members",
-  "section_break_14",
-  "options"
- ],
+ "module": "ascent_insurance_erp",
+ "name": "Insurance Quotation",
+ "title_field": "proposer_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
  "fields": [
   {
    "fieldname": "lead",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Lead",
    "options": "Lead",
-   "reqd": 1
+   "reqd": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "proposer_name",
    "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Proposer Name"
+   "label": "Proposer Name",
+   "in_list_view": 1
   },
   {
    "fieldname": "pincode",
@@ -43,21 +30,22 @@
    "label": "Pincode"
   },
   {
-   "fieldname": "column_break_4",
+   "fieldname": "column_break_1",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "policy_type",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Policy Type",
    "options": "Policy Type",
-   "reqd": 1
+   "reqd": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "policy_period",
-   "fieldtype": "Data",
-   "label": "Policy Period"
+   "fieldtype": "Select",
+   "label": "Policy Period",
+   "options": "1 Year\n2 Years\n3 Years"
   },
   {
    "fieldname": "is_port",
@@ -67,29 +55,32 @@
   {
    "fieldname": "quote_date",
    "fieldtype": "Date",
-   "label": "Quote Date"
+   "label": "Quote Date",
+   "default": "Today",
+   "in_list_view": 1
   },
   {
-   "fieldname": "section_break_9",
+   "fieldname": "section_break_1",
    "fieldtype": "Section Break"
   },
   {
-   "default": "Draft",
    "fieldname": "status",
    "fieldtype": "Select",
-   "in_list_view": 1,
    "label": "Status",
    "options": "Draft\nSent\nAccepted\nRejected",
-   "reqd": 1
+   "default": "Draft",
+   "reqd": 1,
+   "in_list_view": 1
   },
   {
    "fieldname": "agent",
    "fieldtype": "Link",
    "label": "Agent",
-   "options": "User"
+   "options": "User",
+   "in_list_view": 1
   },
   {
-   "fieldname": "section_break_12",
+   "fieldname": "section_break_members",
    "fieldtype": "Section Break",
    "label": "Members"
   },
@@ -101,7 +92,7 @@
    "reqd": 1
   },
   {
-   "fieldname": "section_break_14",
+   "fieldname": "section_break_options",
    "fieldtype": "Section Break",
    "label": "Quotation Options"
   },
@@ -112,29 +103,24 @@
    "options": "Quotation Option"
   }
  ],
- "index_web_pages_for_search": 1,
- "is_subload": 0,
- "links": [],
- "modified": "2026-03-20 04:50:00.000000",
- "modified_by": "Administrator",
- "module": "ascent_insurance_erp",
- "name": "Insurance Quotation",
- "owner": "Administrator",
  "permissions": [
   {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
    "create": 1,
    "delete": 1,
-   "email": 1,
    "export": 1,
    "print": 1,
-   "read": 1,
    "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "write": 1
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Agent",
+   "read": 1,
+   "write": 1,
+   "create": 1
   }
- ],
- "sort_field": "modified",
- "sort_order": "DESC",
- "states": []
+ ]
 }
