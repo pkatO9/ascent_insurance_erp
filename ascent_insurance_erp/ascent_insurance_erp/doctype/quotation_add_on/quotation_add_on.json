@@ -1,0 +1,32 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-03-19 17:48:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "addon_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "addon_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Add-on Name",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-03-19 17:48:00.000000",
+ "modified_by": "Administrator",
+ "module": "ascent_insurance_erp",
+ "name": "Quotation Add-on",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
