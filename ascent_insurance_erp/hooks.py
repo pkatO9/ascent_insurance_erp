@@ -145,6 +145,11 @@ doc_events = {
 	"Lead": {
 		"validate": "ascent_insurance_erp.ascent_insurance_erp.lead.validate",
 		"before_insert": "ascent_insurance_erp.ascent_insurance_erp.lead.before_insert"
+	},
+	"Policy Proposal": {
+		"validate": "ascent_insurance_erp.ascent_insurance_erp.doctype.policy_proposal.policy_proposal.validate_hook",
+		"on_submit": "ascent_insurance_erp.ascent_insurance_erp.doctype.policy_proposal.policy_proposal.on_submit_hook",
+		"on_update": "ascent_insurance_erp.ascent_insurance_erp.doctype.policy_proposal.policy_proposal.on_update_hook"
 	}
 }
 

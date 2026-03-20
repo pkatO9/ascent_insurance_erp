@@ -1,0 +1,8 @@
+// Copyright (c) 2026, Ascent and contributors
+// For license information, please see license.txt
+
+// frappe.ui.form.on("Policy Proposal", {
+// 	refresh(frm) {
+
+// 	},
+// });
