@@ -1,0 +1,61 @@
+{
+    "charts": [],
+    "content": "[{\"id\":\"V6sW7xcTAU\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Insurance ERP</span>\",\"col\":12}},{\"id\":\"Wm9iWrUBV8\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Lead\",\"col\":4}},{\"id\":\"AgGFZLVbL3\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Insurer\",\"col\":4}},{\"id\":\"fyBAj3dLOl\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Product Type\",\"col\":4}},{\"id\":\"GtbzMKMhi_\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Insurance Quotation\",\"col\":9}},{\"id\":\"3lgIDfzCM6\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Policy Proposal\",\"col\":5}},{\"id\":\"bWmNoVIarp\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Policy\",\"col\":4}}]",
+    "creation": "2026-03-21 11:44:55.440797",
+    "custom_blocks": [],
+    "docstatus": 0,
+    "doctype": "Workspace",
+    "for_user": "",
+    "hide_custom": 0,
+    "icon": "check",
+    "idx": 0,
+    "indicator_color": "cyan",
+    "is_hidden": 0,
+    "label": "Insurance ERP",
+    "links": [],
+    "modified": "2026-03-21 12:15:51.709179",
+    "modified_by": "Administrator",
+    "module": "ascent_insurance_erp",
+    "name": "Insurance ERP",
+    "number_cards": [],
+    "owner": "Administrator",
+    "parent_page": "",
+    "public": 1,
+    "quick_lists": [
+        {
+            "document_type": "Policy",
+            "label": "Policy",
+            "quick_list_filter": "[]"
+        },
+        {
+            "document_type": "Insurance Quotation",
+            "label": "Insurance Quotation",
+            "quick_list_filter": "[]"
+        },
+        {
+            "document_type": "Insurer",
+            "label": "Insurer",
+            "quick_list_filter": "[]"
+        },
+        {
+            "document_type": "Lead",
+            "label": "Lead",
+            "quick_list_filter": "[]"
+        },
+        {
+            "document_type": "Policy Proposal",
+            "label": "Policy Proposal",
+            "quick_list_filter": "[]"
+        },
+        {
+            "document_type": "Product Type",
+            "label": "Product Type",
+            "quick_list_filter": "[]"
+        }
+    ],
+    "restrict_to_domain": "Insurance",
+    "roles": [],
+    "sequence_id": 28.0,
+    "shortcuts": [],
+    "title": "Insurance ERP"
+}
