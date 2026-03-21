@@ -49,7 +49,10 @@ doctype_js = {
 	"Policy": "ascent_insurance_erp/public/js/policy.js"
 }
 
-doctype_list_js = {"Lead": "public/js/lead_list.js"}
+doctype_list_js = {
+	"Lead": "public/js/lead_list.js",
+	"Policy": "ascent_insurance_erp/ascent_insurance_erp/doctype/policy/policy_list.js"
+}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -162,23 +165,11 @@ doc_events = {
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"ascent_insurance_erp.tasks.all"
-# 	],
-# 	"daily": [
-# 		"ascent_insurance_erp.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"ascent_insurance_erp.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"ascent_insurance_erp.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"ascent_insurance_erp.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"daily": [
+		"ascent_insurance_erp.ascent_insurance_erp.tasks.update_policy_statuses"
+	]
+}
 
 # Testing
 # -------
