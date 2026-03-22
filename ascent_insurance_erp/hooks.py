@@ -46,7 +46,8 @@ app_license = "mit"
 doctype_js = {
 	"Lead" : "ascent_insurance_erp/public/js/lead.js",
 	"Policy Proposal": "ascent_insurance_erp/public/js/policy_proposal.js",
-	"Policy": "ascent_insurance_erp/public/js/policy.js"
+	"Policy": "ascent_insurance_erp/public/js/policy.js",
+	"Agent": "ascent_insurance_erp/public/js/agent.js"
 }
 
 doctype_list_js = {
@@ -149,7 +150,8 @@ fixtures = [
     {"dt": "LOB"},
     {"dt": "Policy Type"},
     {"dt": "Plan Name"},
-    {"dt": "Plan Option"}
+    {"dt": "Plan Option"},
+    {"dt": "Agent"}
 ]
 
 doc_events = {

@@ -1,0 +1,190 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:agent_name",
+ "creation": "2026-03-22 15:40:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "agent_profile_sb",
+  "agent_name",
+  "agent_type",
+  "linked_user",
+  "is_active",
+  "col_break_1",
+  "mobile",
+  "email",
+  "pan_number",
+  "irdai_license_details_sb",
+  "irdai_license_no",
+  "license_expiry",
+  "license_category",
+  "commission_sb",
+  "commission_rate",
+  "commission_applicable_from",
+  "bank_account_name",
+  "bank_account_no",
+  "ifsc_code",
+  "bank_name",
+  "notes_sb",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "agent_profile_sb",
+   "fieldtype": "Section Break",
+   "label": "Agent Profile"
+  },
+  {
+   "fieldname": "agent_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Agent Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "agent_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Agent Type",
+   "options": "Internal Staff\nPOSP\nIndividual Agent\nSub-agent\nDSA / Corporate Agent\nBroker",
+   "reqd": 1
+  },
+  {
+   "description": "Only set for Internal Staff who log into the system",
+   "fieldname": "linked_user",
+   "fieldtype": "Link",
+   "label": "ERP Login (User)",
+   "options": "User"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "col_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Mobile"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "pan_number",
+   "fieldtype": "Data",
+   "label": "PAN Number"
+  },
+  {
+   "fieldname": "irdai_license_details_sb",
+   "fieldtype": "Section Break",
+   "label": "IRDAI License Details"
+  },
+  {
+   "depends_on": "eval:doc.agent_type != 'Sub-agent'",
+   "description": "Not required for Sub-agents",
+   "fieldname": "irdai_license_no",
+   "fieldtype": "Data",
+   "label": "IRDAI License No."
+  },
+  {
+   "depends_on": "eval:doc.agent_type != 'Sub-agent'",
+   "fieldname": "license_expiry",
+   "fieldtype": "Date",
+   "label": "License Expiry Date"
+  },
+  {
+   "depends_on": "eval:doc.agent_type != 'Sub-agent' && doc.agent_type != 'Internal Staff'",
+   "fieldname": "license_category",
+   "fieldtype": "Select",
+   "label": "License Category",
+   "options": "\nLife\nGeneral\nHealth\nComposite"
+  },
+  {
+   "fieldname": "commission_sb",
+   "fieldtype": "Section Break",
+   "label": "Commission"
+  },
+  {
+   "description": "Agent-specific negotiated rate. If set, overrides insurer commission structure rate.",
+   "fieldname": "commission_rate",
+   "fieldtype": "Percent",
+   "label": "Individual Commission Rate (%)"
+  },
+  {
+   "fieldname": "commission_applicable_from",
+   "fieldtype": "Date",
+   "label": "Rate Applicable From"
+  },
+  {
+   "fieldname": "bank_account_name",
+   "fieldtype": "Data",
+   "label": "Bank Account Name"
+  },
+  {
+   "fieldname": "bank_account_no",
+   "fieldtype": "Data",
+   "label": "Account Number"
+  },
+  {
+   "fieldname": "ifsc_code",
+   "fieldtype": "Data",
+   "label": "IFSC Code"
+  },
+  {
+   "fieldname": "bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name"
+  },
+  {
+   "fieldname": "notes_sb",
+   "fieldtype": "Section Break",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Internal Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-22 15:40:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ascent Insurance Erp",
+ "name": "Agent",
+ "naming_rule": "By field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "agent_name, agent_type, mobile",
+ "sort_field": "agent_name",
+ "sort_order": "ASC",
+ "states": [],
+ "title_field": "agent_name",
+ "track_changes": 1
+}
