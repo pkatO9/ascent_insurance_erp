@@ -61,8 +61,8 @@ frappe.ui.form.on("Policy", {
 			frm.set_df_property("commission_rate", "field_helper", {
 				label: __("Fetch Commission Rate"),
 				onclick: () => {
-					if (!frm.doc.insurer || !frm.doc.product_type) {
-						frappe.msgprint(__("Please select Insurer and Product Type first."));
+					if (!frm.doc.insurer || !frm.doc.plan_name) {
+						frappe.msgprint(__("Please select Insurer and Plan Name first."));
 						return;
 					}
 					

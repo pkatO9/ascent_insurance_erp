@@ -147,7 +147,9 @@ fixtures = [
     {"dt": "Property Setter", "filters": [["doc_type", "in", ["Lead"]]]},
     {"dt": "Kanban Board", "filters": [["kanban_board_name", "in", ["Lead Pipeline"]]]},
     {"dt": "LOB"},
-    {"dt": "Policy Type"}
+    {"dt": "Policy Type"},
+    {"dt": "Plan Name"},
+    {"dt": "Plan Option"}
 ]
 
 doc_events = {

@@ -18,7 +18,7 @@
   "col_break_1",
   "insurer",
   "policy_type",
-  "product_type",
+  "plan_name",
   "policy_details_sec",
   "sum_insured",
   "gross_premium",
@@ -129,11 +129,11 @@
    "options": "Policy Type"
   },
   {
-   "fieldname": "product_type",
+   "fieldname": "plan_name",
    "fieldtype": "Link",
-   "label": "Product Type",
+   "label": "Plan Name",
    "mandatory": 1,
-   "options": "Product Type"
+   "options": "Plan Name"
   },
   {
    "fieldname": "policy_details_sec",

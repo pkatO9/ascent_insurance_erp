@@ -1,6 +1,6 @@
 {
     "charts": [],
-    "content": "[{\"id\":\"V6sW7xcTAU\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Insurance ERP</span>\",\"col\":12}},{\"id\":\"Wm9iWrUBV8\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Lead\",\"col\":4}},{\"id\":\"AgGFZLVbL3\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Insurer\",\"col\":4}},{\"id\":\"fyBAj3dLOl\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Product Type\",\"col\":4}},{\"id\":\"GtbzMKMhi_\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Insurance Quotation\",\"col\":9}},{\"id\":\"3lgIDfzCM6\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Policy Proposal\",\"col\":5}},{\"id\":\"bWmNoVIarp\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Policy\",\"col\":4}}]",
+    "content": "[{\"id\":\"V6sW7xcTAU\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Insurance ERP</span>\",\"col\":12}},{\"id\":\"Wm9iWrUBV8\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Lead\",\"col\":4}},{\"id\":\"AgGFZLVbL3\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Insurer\",\"col\":4}},{\"id\":\"fyBAj3dLOl\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Plan Name\",\"col\":4}},{\"id\":\"GtbzMKMhi_\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Insurance Quotation\",\"col\":9}},{\"id\":\"3lgIDfzCM6\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Policy Proposal\",\"col\":5}},{\"id\":\"bWmNoVIarp\",\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Policy\",\"col\":4}}]",
     "creation": "2026-03-21 11:44:55.440797",
     "custom_blocks": [],
     "docstatus": 0,
@@ -48,8 +48,8 @@
             "quick_list_filter": "[]"
         },
         {
-            "document_type": "Product Type",
-            "label": "Product Type",
+            "document_type": "Plan Name",
+            "label": "Plan Name",
             "quick_list_filter": "[]"
         }
     ],

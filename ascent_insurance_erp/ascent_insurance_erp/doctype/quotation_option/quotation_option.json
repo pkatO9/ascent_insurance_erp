@@ -7,7 +7,6 @@
  "engine": "InnoDB",
  "field_order": [
   "insurer",
-  "product_type",
   "plan_name",
   "column_break_4",
   "sum_insured",
@@ -30,18 +29,12 @@
    "reqd": 1
   },
   {
-   "fieldname": "product_type",
+   "fieldname": "plan_name",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Product Type",
-   "options": "Product Type",
+   "label": "Plan Name",
+   "options": "Plan Name",
    "reqd": 1
-  },
-  {
-   "fieldname": "plan_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Plan Name"
   },
   {
    "fieldname": "column_break_4",
