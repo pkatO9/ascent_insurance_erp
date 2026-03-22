@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:source_name",
+ "creation": "2026-03-22 17:56:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "source_details_sb",
+  "source_name",
+  "source_type",
+  "contact_name",
+  "mobile",
+  "linked_client",
+  "notes",
+  "cb_1",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "source_details_sb",
+   "fieldtype": "Section Break",
+   "label": "Source Details"
+  },
+  {
+   "fieldname": "source_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Source Name",
+   "mandatory": 1,
+   "unique": 1,
+   "description": "e.g. 'Ramesh Shah', 'Facebook Campaign Oct 2025', 'HDFC Branch Anand'"
+  },
+  {
+   "default": "Direct Sales",
+   "fieldname": "source_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Source Type",
+   "mandatory": 1,
+   "options": "Direct Sales\nExisting Client\nEmployee\nSocial Media\nAssociates\nOthers"
+  },
+  {
+   "depends_on": "eval:doc.source_type != 'Social Media' && doc.source_type != 'Direct Sales'",
+   "fieldname": "contact_name",
+   "fieldtype": "Data",
+   "label": "Contact Person",
+   "description": "Name of the person who referred, if applicable"
+  },
+  {
+   "depends_on": "eval:doc.source_type == 'Existing Client' || doc.source_type == 'Employee' || doc.source_type == 'Associates'",
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "label": "Mobile"
+  },
+  {
+   "depends_on": "eval:doc.source_type == 'Existing Client'",
+   "fieldname": "linked_client",
+   "fieldtype": "Link",
+   "label": "Linked Client",
+   "options": "Client",
+   "description": "If the referral came from an existing client in the system"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes / Description",
+   "description": "e.g. campaign name, platform, event, or any context"
+  },
+  {
+   "fieldname": "cb_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Active"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-22 17:56:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ascent Insurance Erp",
+ "name": "Referral Source",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "source_name",
+ "track_changes": 0,
+ "is_submittable": 0
+}

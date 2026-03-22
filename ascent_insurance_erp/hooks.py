@@ -151,7 +151,8 @@ fixtures = [
     {"dt": "Policy Type"},
     {"dt": "Plan Name"},
     {"dt": "Plan Option"},
-    {"dt": "Sales Agent"}
+    {"dt": "Sales Agent"},
+    {"dt": "Referral Source"}
 ]
 
 doc_events = {
