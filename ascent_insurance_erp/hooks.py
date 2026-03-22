@@ -47,7 +47,7 @@ doctype_js = {
 	"Lead" : "ascent_insurance_erp/public/js/lead.js",
 	"Policy Proposal": "ascent_insurance_erp/public/js/policy_proposal.js",
 	"Policy": "ascent_insurance_erp/public/js/policy.js",
-	"Agent": "ascent_insurance_erp/public/js/agent.js"
+	"Sales Agent": "ascent_insurance_erp/public/js/sales_agent.js"
 }
 
 doctype_list_js = {
@@ -151,7 +151,7 @@ fixtures = [
     {"dt": "Policy Type"},
     {"dt": "Plan Name"},
     {"dt": "Plan Option"},
-    {"dt": "Agent"}
+    {"dt": "Sales Agent"}
 ]
 
 doc_events = {

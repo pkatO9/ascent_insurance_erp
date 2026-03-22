@@ -1,15 +1,15 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:agent_name",
- "creation": "2026-03-22 15:40:00.000000",
+ "autoname": "field:sales_agent_name",
+ "creation": "2026-03-22 17:25:00.000000",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "agent_profile_sb",
-  "agent_name",
-  "agent_type",
-  "linked_user",
+  "sales_agent_profile_sb",
+  "sales_agent_name",
+  "user",
+  "employee_id",
   "is_active",
   "col_break_1",
   "mobile",
@@ -22,6 +22,7 @@
   "commission_sb",
   "commission_rate",
   "commission_applicable_from",
+  "bank_details_sb",
   "bank_account_name",
   "bank_account_no",
   "ifsc_code",
@@ -31,34 +32,33 @@
  ],
  "fields": [
   {
-   "fieldname": "agent_profile_sb",
+   "fieldname": "sales_agent_profile_sb",
    "fieldtype": "Section Break",
-   "label": "Agent Profile"
+   "label": "Sales Agent Profile"
   },
   {
-   "fieldname": "agent_name",
+   "fieldname": "sales_agent_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "in_standard_filter": 1,
-   "label": "Agent Name",
+   "label": "Sales Agent Name",
    "reqd": 1,
    "unique": 1
   },
   {
-   "fieldname": "agent_type",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Agent Type",
-   "options": "Internal Staff\nPOSP\nIndividual Agent\nSub-agent\nDSA / Corporate Agent\nBroker",
-   "reqd": 1
+   "description": "Every Sales Agent must have an ERP login",
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "ERP User Account",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
   },
   {
-   "description": "Only set for Internal Staff who log into the system",
-   "fieldname": "linked_user",
-   "fieldtype": "Link",
-   "label": "ERP Login (User)",
-   "options": "User"
+   "description": "Internal employee reference if applicable",
+   "fieldname": "employee_id",
+   "fieldtype": "Data",
+   "label": "Employee ID"
   },
   {
    "default": "1",
@@ -93,20 +93,16 @@
    "label": "IRDAI License Details"
   },
   {
-   "depends_on": "eval:doc.agent_type != 'Sub-agent'",
-   "description": "Not required for Sub-agents",
    "fieldname": "irdai_license_no",
    "fieldtype": "Data",
    "label": "IRDAI License No."
   },
   {
-   "depends_on": "eval:doc.agent_type != 'Sub-agent'",
    "fieldname": "license_expiry",
    "fieldtype": "Date",
    "label": "License Expiry Date"
   },
   {
-   "depends_on": "eval:doc.agent_type != 'Sub-agent' && doc.agent_type != 'Internal Staff'",
    "fieldname": "license_category",
    "fieldtype": "Select",
    "label": "License Category",
@@ -118,15 +114,21 @@
    "label": "Commission"
   },
   {
-   "description": "Agent-specific negotiated rate. If set, overrides insurer commission structure rate.",
+   "description": "Please enter the negotiated commission percentage.",
    "fieldname": "commission_rate",
    "fieldtype": "Percent",
-   "label": "Individual Commission Rate (%)"
+   "label": "Commission Rate (%)",
+   "reqd": 1
   },
   {
    "fieldname": "commission_applicable_from",
    "fieldtype": "Date",
    "label": "Rate Applicable From"
+  },
+  {
+   "fieldname": "bank_details_sb",
+   "fieldtype": "Section Break",
+   "label": "Bank Details"
   },
   {
    "fieldname": "bank_account_name",
@@ -161,10 +163,10 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-03-22 15:40:00.000000",
+ "modified": "2026-03-22 17:25:00.000000",
  "modified_by": "Administrator",
  "module": "Ascent Insurance Erp",
- "name": "Agent",
+ "name": "Sales Agent",
  "naming_rule": "By field",
  "owner": "Administrator",
  "permissions": [
@@ -181,10 +183,10 @@
    "write": 1
   }
  ],
- "search_fields": "agent_name, agent_type, mobile",
- "sort_field": "agent_name",
+ "search_fields": "sales_agent_name, user, mobile",
+ "sort_field": "sales_agent_name",
  "sort_order": "ASC",
  "states": [],
- "title_field": "agent_name",
+ "title_field": "sales_agent_name",
  "track_changes": 1
 }
