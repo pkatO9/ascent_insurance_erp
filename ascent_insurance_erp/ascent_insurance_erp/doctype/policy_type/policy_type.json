@@ -8,6 +8,14 @@
  "engine": "InnoDB",
  "fields": [
   {
+   "fieldname": "lob",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Line of Business (LOB)",
+   "options": "LOB",
+   "reqd": 1
+  },
+  {
    "fieldname": "policy_type_name",
    "fieldtype": "Data",
    "in_list_view": 1,

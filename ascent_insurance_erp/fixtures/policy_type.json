@@ -1,0 +1,182 @@
+[
+ {
+  "active": 0,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": null,
+  "modified": "2026-03-19 09:15:03.457884",
+  "name": "Motor",
+  "policy_type_name": "Motor"
+ },
+ {
+  "active": 1,
+  "description": "Domestic and International Travel Insurance",
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": null,
+  "modified": "2026-03-19 09:59:39.043171",
+  "name": "Travel",
+  "policy_type_name": "Travel"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": "Life",
+  "modified": "2026-03-22 08:45:57.191236",
+  "name": "Term Insurance",
+  "policy_type_name": "Term Insurance"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": "Life",
+  "modified": "2026-03-22 08:45:57.438541",
+  "name": "Investment Insurance",
+  "policy_type_name": "Investment Insurance"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": "Life",
+  "modified": "2026-03-22 08:45:57.440135",
+  "name": "Pension Plan",
+  "policy_type_name": "Pension Plan"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": "Life",
+  "modified": "2026-03-22 08:45:57.441416",
+  "name": "ULIP",
+  "policy_type_name": "ULIP"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": "General",
+  "modified": "2026-03-22 08:45:57.443253",
+  "name": "Motor Insurance",
+  "policy_type_name": "Motor Insurance"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": "General",
+  "modified": "2026-03-22 08:45:57.445167",
+  "name": "Fire Insurance",
+  "policy_type_name": "Fire Insurance"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": "General",
+  "modified": "2026-03-22 08:45:57.446571",
+  "name": "Fire Package Insurance",
+  "policy_type_name": "Fire Package Insurance"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": "General",
+  "modified": "2026-03-22 08:45:57.447862",
+  "name": "Machinery Breakdown Insurance",
+  "policy_type_name": "Machinery Breakdown Insurance"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": "General",
+  "modified": "2026-03-22 08:45:57.449045",
+  "name": "Marine Cargo insurance",
+  "policy_type_name": "Marine Cargo insurance"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": "General",
+  "modified": "2026-03-22 08:45:57.450576",
+  "name": "Engineering All Risks Insurance",
+  "policy_type_name": "Engineering All Risks Insurance"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": "General",
+  "modified": "2026-03-22 08:45:57.451832",
+  "name": "Liability Insurance",
+  "policy_type_name": "Liability Insurance"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": "Health",
+  "modified": "2026-03-22 08:45:57.453131",
+  "name": "Health Insurance",
+  "policy_type_name": "Health Insurance"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": "Health",
+  "modified": "2026-03-22 08:45:57.454481",
+  "name": "Super Top Up Insurance",
+  "policy_type_name": "Super Top Up Insurance"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": "Health",
+  "modified": "2026-03-22 08:45:57.455547",
+  "name": "Critical Illness Insurance",
+  "policy_type_name": "Critical Illness Insurance"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": null,
+  "modified": "2026-03-19 09:14:13.942811",
+  "name": "Life",
+  "policy_type_name": "Life"
+ },
+ {
+  "active": 1,
+  "description": null,
+  "docstatus": 0,
+  "doctype": "Policy Type",
+  "lob": null,
+  "modified": "2026-03-19 09:13:39.263817",
+  "name": "Health",
+  "policy_type_name": "Health"
+ }
+]
