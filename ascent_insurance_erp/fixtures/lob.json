@@ -1,0 +1,29 @@
+[
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "LOB",
+  "is_active": 1,
+  "lob_name": "Life",
+  "modified": "2026-03-22 08:39:54.175787",
+  "name": "Life"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "LOB",
+  "is_active": 1,
+  "lob_name": "General",
+  "modified": "2026-03-22 08:39:54.395024",
+  "name": "General"
+ },
+ {
+  "description": null,
+  "docstatus": 0,
+  "doctype": "LOB",
+  "is_active": 1,
+  "lob_name": "Health",
+  "modified": "2026-03-22 08:39:54.397123",
+  "name": "Health"
+ }
+]

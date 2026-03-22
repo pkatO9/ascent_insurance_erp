@@ -4,7 +4,7 @@
    {
     "column_name": "New",
     "indicator": null,
-    "order": "[\n \"CRM-LEAD-2026-00003\",\n \"CRM-LEAD-2026-00002\"\n]",
+    "order": "[\n \"CRM-LEAD-2026-00007\",\n \"CRM-LEAD-2026-00006\"\n]",
     "parent": "Lead Pipeline",
     "parentfield": "columns",
     "parenttype": "Kanban Board",
@@ -40,7 +40,7 @@
    {
     "column_name": "Converted",
     "indicator": null,
-    "order": "[\n \"CRM-LEAD-2026-00001\"\n]",
+    "order": "[\n \"CRM-LEAD-2026-00005\"\n]",
     "parent": "Lead Pipeline",
     "parentfield": "columns",
     "parenttype": "Kanban Board",
