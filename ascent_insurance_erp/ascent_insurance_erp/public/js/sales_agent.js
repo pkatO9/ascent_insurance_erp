@@ -20,12 +20,51 @@ frappe.ui.form.on("Sales Agent", {
             return { filters: { enabled: 1 } };
         });
     },
+
+    user: function(frm) {
+        if (frm.doc.user) {
+            frappe.db.get_value("User", frm.doc.user, ["full_name", "email", "mobile_no"], (r) => {
+                if (r) {
+                    frm.set_value("sales_agent_name", r.full_name);
+                    frm.set_value("email", r.email);
+                    if (r.mobile_no) {
+                        frm.set_value("mobile", r.mobile_no);
+                    }
+                }
+            });
+        }
+    }
 });
 
 function show_indicators(frm) {
-    if (frm.is_new()) return;
+//     if (frm.is_new()) return;
 
-    frm.dashboard.add_indicator("Internal Sales Agent", "blue");
+//     // Show Lead Status Stats
+//     const statuses = ["New", "Contacted", "Quotation Sent", "Proposal Submitted", "Converted", "Lost"];
+//     const colors = {
+//         "New": "grey", "Contacted": "blue",
+//         "Quotation Sent": "orange",
+//         "Proposal Submitted": "purple",
+//         "Converted": "green", "Lost": "red"
+//     };
+
+//     statuses.forEach(status => {
+//         frappe.db.count("Lead Enquiry", {
+//             sales_agent: frm.doc.name,
+//             status: status
+//         }).then(count => {
+//             if (count > 0) {
+//                 frm.dashboard.add_indicator(
+//                     __("{0} {1}", [count, status]),
+//                     colors[status] || "blue",
+//                     () => frappe.set_route("List", "Lead Enquiry", {
+//                         sales_agent: frm.doc.name,
+//                         status: status
+//                     })
+//                 );
+//             }
+//         });
+//     });
 
     if (!frm.doc.is_active) {
         frm.dashboard.add_indicator("Inactive", "red");

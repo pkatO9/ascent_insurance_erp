@@ -1,15 +1,14 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:sales_agent_name",
+ "autoname": "field:email",
  "creation": "2026-03-22 17:25:00.000000",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "sales_agent_profile_sb",
-  "sales_agent_name",
   "user",
-  "employee_id",
+  "sales_agent_name",
   "is_active",
   "col_break_1",
   "mobile",
@@ -42,8 +41,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Sales Agent Name",
-   "reqd": 1,
-   "unique": 1
+   "reqd": 1
   },
   {
    "description": "Every Sales Agent must have an ERP login",
@@ -53,12 +51,6 @@
    "options": "User",
    "reqd": 1,
    "unique": 1
-  },
-  {
-   "description": "Internal employee reference if applicable",
-   "fieldname": "employee_id",
-   "fieldtype": "Data",
-   "label": "Employee ID"
   },
   {
    "default": "1",
@@ -80,7 +72,9 @@
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email"
+   "label": "Email",
+   "mandatory": 1,
+   "unique": 1
   },
   {
    "fieldname": "pan_number",
