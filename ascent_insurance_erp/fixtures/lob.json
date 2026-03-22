@@ -14,7 +14,7 @@
   "doctype": "LOB",
   "is_active": 1,
   "lob_name": "General",
-  "modified": "2026-03-22 08:39:54.395024",
+  "modified": "2026-03-22 08:58:22.077352",
   "name": "General"
  },
  {
@@ -25,5 +25,14 @@
   "lob_name": "Health",
   "modified": "2026-03-22 08:39:54.397123",
   "name": "Health"
+ },
+ {
+  "description": "Test Insurance for testing",
+  "docstatus": 0,
+  "doctype": "LOB",
+  "is_active": 1,
+  "lob_name": "Test Insurance",
+  "modified": "2026-03-22 09:04:17.183759",
+  "name": "Test Insurance"
  }
 ]
