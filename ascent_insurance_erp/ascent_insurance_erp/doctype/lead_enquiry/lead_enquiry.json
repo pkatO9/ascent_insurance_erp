@@ -1,0 +1,215 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series",
+ "creation": "2026-03-22 18:48:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "lead_details_sb",
+  "naming_series",
+  "client",
+  "sales_agent",
+  "assigned_ops",
+  "cb_1",
+  "lob",
+  "policy_type",
+  "status",
+  "source_details_sb",
+  "referral_source",
+  "source_type",
+  "follow_up_sb",
+  "follow_up_date",
+  "priority",
+  "notes",
+  "conversion_sb",
+  "converted_on",
+  "lost_reason",
+  "linked_documents_sb",
+  "insurance_quotation",
+  "policy_proposal",
+  "policy"
+ ],
+ "fields": [
+  {
+   "fieldname": "lead_details_sb",
+   "fieldtype": "Section Break",
+   "label": "Lead Details"
+  },
+  {
+   "default": "LEAD-.YYYY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "LEAD-.YYYY.-"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Client",
+   "mandatory": 1,
+   "options": "Client"
+  },
+  {
+   "fieldname": "sales_agent",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sales Agent",
+   "mandatory": 1,
+   "options": "Sales Agent",
+   "description": "Agent who owns this lead and earns commission"
+  },
+  {
+   "fieldname": "assigned_ops",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Assigned To (Ops)",
+   "options": "User",
+   "description": "Operations person processing this lead. Gets read access automatically."
+  },
+  {
+   "fieldname": "cb_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "lob",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Line of Business",
+   "mandatory": 1,
+   "options": "LOB"
+  },
+  {
+   "fieldname": "policy_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Policy Type",
+   "mandatory": 1,
+   "options": "Policy Type"
+  },
+  {
+   "default": "New",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "mandatory": 1,
+   "options": "New\nContacted\nQuotation Sent\nProposal Submitted\nConverted\nLost"
+  },
+  {
+   "fieldname": "source_details_sb",
+   "fieldtype": "Section Break",
+   "label": "Source Details"
+  },
+  {
+   "fieldname": "referral_source",
+   "fieldtype": "Link",
+   "label": "Referral Source",
+   "options": "Referral Source"
+  },
+  {
+   "fetch_from": "referral_source.source_type",
+   "fieldname": "source_type",
+   "fieldtype": "Select",
+   "label": "Source Type",
+   "options": "Direct Sales\nExisting Client\nEmployee\nSocial Media\nAssociates\nOthers",
+   "read_only": 1
+  },
+  {
+   "fieldname": "follow_up_sb",
+   "fieldtype": "Section Break",
+   "label": "Follow-up"
+  },
+  {
+   "fieldname": "follow_up_date",
+   "fieldtype": "Date",
+   "label": "Next Follow-up Date"
+  },
+  {
+   "default": "Medium",
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priority",
+   "options": "Low\nMedium\nHigh"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "conversion_sb",
+   "fieldtype": "Section Break",
+   "label": "Conversion"
+  },
+  {
+   "fieldname": "converted_on",
+   "fieldtype": "Date",
+   "label": "Converted On",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.status=='Lost'",
+   "fieldname": "lost_reason",
+   "fieldtype": "Small Text",
+   "label": "Reason for Loss",
+   "mandatory_depends_on": "eval:doc.status=='Lost'"
+  },
+  {
+   "fieldname": "linked_documents_sb",
+   "fieldtype": "Section Break",
+   "label": "Linked Documents"
+  },
+  {
+   "fieldname": "insurance_quotation",
+   "fieldtype": "Link",
+   "label": "Quotation",
+   "options": "Insurance Quotation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "policy_proposal",
+   "fieldtype": "Link",
+   "label": "Policy Proposal",
+   "options": "Policy Proposal",
+   "read_only": 1
+  },
+  {
+   "fieldname": "policy",
+   "fieldtype": "Link",
+   "label": "Policy",
+   "options": "Policy",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-22 18:48:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ascent Insurance Erp",
+ "name": "Lead Enquiry",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "client, sales_agent, status, policy_type",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "client",
+ "track_changes": 1,
+ "is_submittable": 0
+}
