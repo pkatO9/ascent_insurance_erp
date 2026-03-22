@@ -1,0 +1,242 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series",
+ "creation": "2026-03-22 18:15:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "client_identity_sb",
+  "naming_series",
+  "client_type",
+  "full_name",
+  "company_name",
+  "cb_1",
+  "mobile",
+  "email",
+  "whatsapp_number",
+  "personal_details_sb",
+  "dob",
+  "age",
+  "gender",
+  "occupation",
+  "annual_income",
+  "pan_number",
+  "cb_2",
+  "gstin",
+  "business_type",
+  "employee_count",
+  "address_sb",
+  "address_line1",
+  "address_line2",
+  "city",
+  "state",
+  "pincode",
+  "erp_linkage_sb",
+  "linked_customer",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "client_identity_sb",
+   "fieldtype": "Section Break",
+   "label": "Client Identity"
+  },
+  {
+   "default": "CLNT-.YYYY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "options": "CLNT-.YYYY.-"
+  },
+  {
+   "default": "Individual",
+   "fieldname": "client_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Client Type",
+   "mandatory": 1,
+   "options": "Individual\nFamily\nCorporate\nHUF"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "mandatory": 1,
+   "description": "Primary contact name. For Corporate, enter the key contact person."
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Corporate' || doc.client_type == 'HUF'",
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Company / HUF Name",
+   "mandatory_depends_on": "eval:doc.client_type == 'Corporate' || doc.client_type == 'HUF'"
+  },
+  {
+   "fieldname": "cb_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mobile",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Mobile",
+   "mandatory": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "whatsapp_number",
+   "fieldtype": "Data",
+   "label": "WhatsApp Number",
+   "description": "If different from mobile"
+  },
+  {
+   "fieldname": "personal_details_sb",
+   "fieldtype": "Section Break",
+   "label": "Personal Details"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Individual' || doc.client_type == 'Family'",
+   "fieldname": "dob",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Individual' || doc.client_type == 'Family'",
+   "fieldname": "age",
+   "fieldtype": "Int",
+   "label": "Age",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Individual' || doc.client_type == 'Family'",
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale\nOther"
+  },
+  {
+   "fieldname": "occupation",
+   "fieldtype": "Data",
+   "label": "Occupation"
+  },
+  {
+   "fieldname": "annual_income",
+   "fieldtype": "Currency",
+   "label": "Annual Income"
+  },
+  {
+   "fieldname": "pan_number",
+   "fieldtype": "Data",
+   "label": "PAN Number"
+  },
+  {
+   "fieldname": "cb_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Corporate' || doc.client_type == 'HUF'",
+   "fieldname": "gstin",
+   "fieldtype": "Data",
+   "label": "GSTIN"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Corporate'",
+   "fieldname": "business_type",
+   "fieldtype": "Data",
+   "label": "Nature of Business"
+  },
+  {
+   "depends_on": "eval:doc.client_type == 'Corporate'",
+   "fieldname": "employee_count",
+   "fieldtype": "Int",
+   "label": "Number of Employees",
+   "description": "Relevant for group health policies"
+  },
+  {
+   "fieldname": "address_sb",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "address_line1",
+   "fieldtype": "Data",
+   "label": "Address Line 1"
+  },
+  {
+   "fieldname": "address_line2",
+   "fieldtype": "Data",
+   "label": "Address Line 2"
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "label": "City"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "pincode",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Pincode"
+  },
+  {
+   "fieldname": "erp_linkage_sb",
+   "fieldtype": "Section Break",
+   "label": "ERP Linkage"
+  },
+  {
+   "fieldname": "linked_customer",
+   "fieldtype": "Link",
+   "label": "ERPNext Customer",
+   "options": "Customer",
+   "read_only": 1,
+   "description": "Auto-created when first policy is issued. Do not edit manually."
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-22 18:15:00.000000",
+ "modified_by": "Administrator",
+ "module": "Ascent Insurance Erp",
+ "name": "Client",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "full_name, mobile, email, company_name",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "full_name",
+ "track_changes": 1,
+ "is_submittable": 0
+}

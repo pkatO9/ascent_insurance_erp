@@ -47,7 +47,8 @@ doctype_js = {
 	"Lead" : "ascent_insurance_erp/public/js/lead.js",
 	"Policy Proposal": "ascent_insurance_erp/public/js/policy_proposal.js",
 	"Policy": "ascent_insurance_erp/public/js/policy.js",
-	"Sales Agent": "ascent_insurance_erp/public/js/sales_agent.js"
+	"Sales Agent": "ascent_insurance_erp/public/js/sales_agent.js",
+	"Client": "ascent_insurance_erp/public/js/client.js"
 }
 
 doctype_list_js = {
@@ -152,7 +153,8 @@ fixtures = [
     {"dt": "Plan Name"},
     {"dt": "Plan Option"},
     {"dt": "Sales Agent"},
-    {"dt": "Referral Source"}
+    {"dt": "Referral Source"},
+    {"dt": "Client"}
 ]
 
 doc_events = {
